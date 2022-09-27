@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:12:33 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/28 00:53:53 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/28 01:26:52 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	if (argc == 1)
-		exit (0);
+	if (argc < 2)
+		return (0);
 	parse_args(argv);
 	return (0);
 }
