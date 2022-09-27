@@ -6,15 +6,12 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/27 21:38:59 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/28 00:51:13 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
-/* Parameters */
-
 
 /* Libraries */
 //Std libraries
@@ -30,13 +27,14 @@
 //Stacks 
 typedef struct s_stack
 {
-	int		value;
-	int		index;
-	int		pos;
-	int		target_pos;
-	int		cost_a;
-	int		cost_b;
-}				t_stack;
+	int				value;
+	int				index;
+	int				pos;
+	int				target_pos;
+	int				cost_a;
+	int				cost_b;
+	struct s_stack	*next;
+}					t_stack;
 
 /* Functions */
 // Actions //
@@ -56,8 +54,10 @@ void	rra(void);
 void	rrb(void);
 void	rrr(void);
 
-// Error Management //
+// Parse Arguments //
+void	parse_args(char **argv);
 
 // Utils //
+int		ft_atoi_mod(const char *str);
 
 #endif
