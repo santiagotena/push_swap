@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/28 00:51:13 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/28 01:40:56 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,25 +39,25 @@ typedef struct s_stack
 /* Functions */
 // Actions //
 //Push
-void	pa(void);
-void	pb(void);
+void		pa(void);
+void		pb(void);
 //Swap
-void	sa(void);
-void	sb(void);
-void	ss(void);
+void		sa(void);
+void		sb(void);
+void		ss(void);
 //Rotate
-void	ra(void);
-void	rb(void);
-void	rr(void);
+void		ra(void);
+void		rb(void);
+void		rr(void);
 //Reverse rotate
-void	rra(void);
-void	rrb(void);
-void	rrr(void);
+void		rra(void);
+void		rrb(void);
+void		rrr(void);
 
 // Parse Arguments //
-void	parse_args(char **argv);
+void		parse_args(char **argv);
 
 // Utils //
-int		ft_atoi_mod(const char *str);
+long int	ft_atoi_mod(const char *str);
 
 #endif
