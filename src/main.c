@@ -6,14 +6,16 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:12:33 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/27 20:24:43 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/27 21:41:28 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
+	t_stack		a_stack;
+	
 	if ()
 	{
 		// print_help();
