@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/27 20:23:38 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/27 21:38:59 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,33 +27,37 @@
 # include "libraries/ft_printf/ft_printf.h"
 
 /* Structs */
-//Fractal parameters 
-// typedef struct s_fractol
-// {
-// 	void			*mlx;
-// 	void			*win;
-// 	char			*f_name;
-// 	double			min_r;
-// 	double			max_r;
-// 	double			min_i;
-// 	double			max_i;
-// 	double			kr;
-// 	double			ki;
-// 	struct s_img	*pimg;
-// }				t_fractol;
+//Stacks 
+typedef struct s_stack
+{
+	int		value;
+	int		index;
+	int		pos;
+	int		target_pos;
+	int		cost_a;
+	int		cost_b;
+}				t_stack;
 
 /* Functions */
-// // Help
-// void	print_help(void);
+// Actions //
+//Push
+void	pa(void);
+void	pb(void);
+//Swap
+void	sa(void);
+void	sb(void);
+void	ss(void);
+//Rotate
+void	ra(void);
+void	rb(void);
+void	rr(void);
+//Reverse rotate
+void	rra(void);
+void	rrb(void);
+void	rrr(void);
 
-// // Draw fractals //
-// // Mandelbrot
-// void	init_mandelbrot(char **argv);
-// void	mandelbrot(t_img *img, t_point *p);
-// void	draw_mandelbrot(t_fractol *f, t_img *img);
-// // Julia
-// void	init_julia(char **argv);
-// void	julia(t_fractol *f, t_img *img, t_point *p);
-// void	draw_julia(t_fractol *f, t_img *img);
+// Error Management //
+
+// Utils //
 
 #endif
