@@ -6,12 +6,12 @@
 #    By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 20:13:25 by stena-he          #+#    #+#              #
-#    Updated: 2022/09/27 21:32:49 by stena-he         ###   ########.fr        #
+#    Updated: 2022/09/28 00:48:22 by stena-he         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Compilation
-NAME = 	fractol
+NAME = 	push_swap
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
 DEBUG = -fsanitize=address
@@ -25,8 +25,8 @@ PRINTF = libraries/ft_printf/libftprintf.a
 
 # Source and object files
 SRC =	src/main.c \
-		src/utils.c \
-		src/error_management.c \
+		src/parse_args.c \
+		src/ft_atoi_mod.c \
 		src/actions/push.c \
 		src/actions/swap.c \
 		src/actions/rotate.c \
