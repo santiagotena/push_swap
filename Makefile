@@ -6,7 +6,7 @@
 #    By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 20:13:25 by stena-he          #+#    #+#              #
-#    Updated: 2022/09/28 00:48:22 by stena-he         ###   ########.fr        #
+#    Updated: 2022/09/28 01:00:49 by stena-he         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ PRINTF = libraries/ft_printf/libftprintf.a
 # Source and object files
 SRC =	src/main.c \
 		src/parse_args.c \
-		src/ft_atoi_mod.c \
+		src/utils.c \
 		src/actions/push.c \
 		src/actions/swap.c \
 		src/actions/rotate.c \
