@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/28 12:51:43 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/28 17:07:02 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ void		rrr(void);
 void		parse_args(char **argv);
 
 // Linked lists
-t_stack		*ft_lstnew_mod(void *value);
+t_stack		*ft_lstnew_mod(int value);
 void		ft_lstadd_back_mod(t_stack **lst, t_stack *new);
 void		ft_lstdelone_mod(t_stack *lst, void (*del)(void *));
 void		ft_lstclear_mod(t_stack **lst, void (*del)(void *));
 
 // Utils //
-long int	ft_atoi_mod(const char *str);
+int			ft_atoi_mod(const char *str);
 void		error_exit(void);
 
 #endif
