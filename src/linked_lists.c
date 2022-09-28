@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 12:27:35 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/28 17:06:06 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/28 17:35:59 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,27 +40,17 @@ void	ft_lstadd_back_mod(t_stack **lst, t_stack *new)
 	return ;
 }
 
-void	ft_lstdelone_mod(t_stack *lst, void (*del)())
+void	free_stack(t_stack **stack)
 {
-	if (!lst || !del)
+	t_stack	*tmp;
+
+	if (!stack || !(*stack))
 		return ;
-	del(lst->value);
-	free(lst);
-}
-
-void	ft_lstclear_mod(t_stack **lst, void (*del)())
-{
-	t_stack	*temporary;
-	t_stack	*prev;
-
-	temporary = *lst;
-	prev = NULL;
-	while (temporary != NULL)
-	{		
-		del(temporary->value);
-		prev = temporary;
-		temporary = temporary->next;
-		free(prev);
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
 	}
-	*lst = NULL;
+	*stack = NULL;
 }
