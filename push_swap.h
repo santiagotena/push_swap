@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/28 01:40:56 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/28 02:52:16 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ void		parse_args(char **argv);
 
 // Utils //
 long int	ft_atoi_mod(const char *str);
+void		error_exit(void);
 
 #endif
