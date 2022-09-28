@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 23:25:09 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/28 03:54:38 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/28 12:49:39 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,20 +52,27 @@
 void	parse_args(char **argv)
 {
 	t_stack		a_stack;
-	t_stack		head;
+	t_stack		node;
+	// t_stack		*head;
 	int			index;
+	long int	new;
 
-	a_stack.value = 0;
-	head = a_stack;
+	// head = *a_stack;
 	index = 1;
+	new = ft_atoi_mod(argv[index]);
+	a_stack = ft_lstnew_mod(new);
+	printf("%d", a_stack.value);
+	index++;
 	while (argv[index] != NULL)
 	{
-		a_stack.value = ft_atoi_mod(argv[index]);
+		new = ft_atoi_mod(argv[index]);
+		node = ft_lstnew_mod(new);
+		ft_lstadd_back_mod(&a_stack, &node);
+		// Free node?
 		printf("%d", a_stack.value);
 		index++;
-		a_stack = *a_stack.next;
 	}
-	a_stack = head;
+	// a_stack = head;
 	printf("%d", a_stack.value);
 	
 	// check_dup(*argv);
