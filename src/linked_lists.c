@@ -6,13 +6,13 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 12:27:35 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/28 12:51:14 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/28 17:06:06 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack	*ft_lstnew_mod(void *value)
+t_stack	*ft_lstnew_mod(int value)
 {
 	t_stack	*output;
 
@@ -40,7 +40,7 @@ void	ft_lstadd_back_mod(t_stack **lst, t_stack *new)
 	return ;
 }
 
-void	ft_lstdelone_mod(t_stack *lst, void (*del)(void *))
+void	ft_lstdelone_mod(t_stack *lst, void (*del)())
 {
 	if (!lst || !del)
 		return ;
@@ -48,7 +48,7 @@ void	ft_lstdelone_mod(t_stack *lst, void (*del)(void *))
 	free(lst);
 }
 
-void	ft_lstclear_mod(t_stack **lst, void (*del)(void *))
+void	ft_lstclear_mod(t_stack **lst, void (*del)())
 {
 	t_stack	*temporary;
 	t_stack	*prev;

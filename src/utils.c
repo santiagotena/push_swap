@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 01:00:34 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/28 01:38:06 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/28 17:06:47 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	error_exit(void)
  * @param str 
  * @return int 
  */
-long int	ft_atoi_mod(const char *str)
+int	ft_atoi_mod(const char *str)
 {
 	long int			output;
 	long int			sign;
@@ -49,5 +49,5 @@ long int	ft_atoi_mod(const char *str)
 	output = sign * output;
 	if (output < -2147483648 || output > 2147483647)
 		error_exit();
-	return (sign * output);
+	return (int) (sign * output);
 }
