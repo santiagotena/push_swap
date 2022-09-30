@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:12:33 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/30 13:06:20 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/30 15:20:27 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ int	main(int argc, char **argv)
 	b_stack = NULL;
 	if (argc < 2)
 		return (0);
+	if (argc == 2)
+	{
+		argv = ft_split(argv[1], ' ');
+	}
 	a_stack = parse_args(argv);
 	free_stack(&a_stack);
 	free_stack(&b_stack);
