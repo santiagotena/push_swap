@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 12:27:35 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/28 17:35:59 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/01 00:17:25 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,12 @@ void	ft_lstadd_back_mod(t_stack **lst, t_stack *new)
 		last_node = last_node->next;
 	last_node->next = new;
 	return ;
+}
+
+void	ft_lstadd_front_mod(t_stack **lst, t_stack *new)
+{
+	new->next = *lst;
+	*lst = new;
 }
 
 void	free_stack(t_stack **stack)

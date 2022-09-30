@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:30:29 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/30 20:25:46 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/01 00:32:40 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,18 @@
  */
 void	pa(t_stack **a_stack, t_stack **b_stack)
 {
+	t_stack	*node;
+	t_stack *temp;
 	int		push_value;
-	int		tmp;
 	
 	if (!b_stack || !(*b_stack))
 		return ;
 	push_value = (*b_stack)->value;
-	
-	
-	
+	node = ft_lstnew_mod(push_value);
+	ft_lstadd_front_mod(a_stack, node);
+	temp = *b_stack;
+	*b_stack = (*b_stack)->next;
+	free(temp);
 	return ;
 }
 
@@ -42,8 +45,17 @@ void	pa(t_stack **a_stack, t_stack **b_stack)
  */
 void	pb(t_stack **a_stack, t_stack **b_stack)
 {
+	t_stack	*node;
+	t_stack *temp;
+	int		push_value;
+	
 	if (!a_stack || !(*a_stack))
 		return ;
-	
+	push_value = (*a_stack)->value;
+	node = ft_lstnew_mod(push_value);
+	ft_lstadd_front_mod(b_stack, node);
+	temp = *a_stack;
+	*a_stack = (*a_stack)->next;
+	free(temp);
 	return ;
 }
