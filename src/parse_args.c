@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 23:25:09 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/30 14:13:06 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/30 19:14:27 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	is_sorted(t_stack *a_stack)
 	while (a_stack->next != NULL)
 	{
 		if (a_stack->value > a_stack->next->value)
-			return (0) ;
+			return (0);
 		a_stack = a_stack->next;
 	}
 	return (1);
@@ -26,7 +26,7 @@ int	is_sorted(t_stack *a_stack)
 int	check_dup(char **argv)
 {
 	int		i;
-	int 	j;
+	int		j;
 	int		counter;
 
 	i = 1;
@@ -36,7 +36,7 @@ int	check_dup(char **argv)
 	{
 		while (argv[j])
 		{
-			if ( ft_atoi_mod(argv[i]) == ft_atoi_mod(argv[j]))
+			if (ft_atoi_mod(argv[i]) == ft_atoi_mod(argv[j]))
 				counter++;
 			j++;
 		}
@@ -55,6 +55,7 @@ t_stack	*parse_args(char **argv)
 	t_stack		*node;
 	int			index;
 	long int	new;
+
 	index = 1;
 	new = ft_atoi_mod(argv[index]);
 	a_stack = ft_lstnew_mod(new);
@@ -72,4 +73,3 @@ t_stack	*parse_args(char **argv)
 		exit(0);
 	return (a_stack);
 }
-

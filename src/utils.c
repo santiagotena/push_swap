@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 01:00:34 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/30 13:20:15 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/30 19:12:59 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ int	ft_atoi_mod(const char *str)
 	output = sign * output;
 	if (output < -2147483648 || output > 2147483647)
 		error_exit();
-	return (int) (sign * output);
+	return ((int)(sign * output));
 }
