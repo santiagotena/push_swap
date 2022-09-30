@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/30 13:05:57 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/30 19:43:13 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ typedef struct s_stack
 /* Functions */
 // Actions //
 //Push
-void		pa(void);
-void		pb(void);
+void		pa(t_stack **a_stack, t_stack **b_stack);
+void		pb(t_stack **a_stack, t_stack **b_stack);
 //Swap
 void		sa(void);
 void		sb(void);
