@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/28 17:37:03 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/30 13:05:57 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void		rrb(void);
 void		rrr(void);
 
 // Parse Arguments //
-void		parse_args(char **argv);
+t_stack		*parse_args(char **argv);
 
 // Linked lists
 t_stack		*ft_lstnew_mod(int value);

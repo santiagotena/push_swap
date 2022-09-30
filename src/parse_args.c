@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 23:25:09 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/28 17:33:52 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/09/30 13:07:52 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,29 +49,27 @@
 // 	return ;
 // }
 
-void	parse_args(char **argv)
+t_stack	*parse_args(char **argv)
 {
 	t_stack		*a_stack;
 	t_stack		*node;
-	// t_stack		*head;
 	int			index;
 	long int	new;
-	// head = *a_stack;
 	index = 1;
 	new = ft_atoi_mod(argv[index]);
 	a_stack = ft_lstnew_mod(new);
-	// printf("%d", a_stack->value);
 	index++;
 	while (argv[index] != NULL)
 	{
 		new = ft_atoi_mod(argv[index]);
 		node = ft_lstnew_mod(new);
 		ft_lstadd_back_mod(&a_stack, node);
-		free_stack(&node);
+		// free_stack(&node);
 		// printf("%d", a_stack->value);
 		index++;
 	}
-	free_stack(&a_stack);
+	return (a_stack);
+	// free_stack(&a_stack);
 	// a_stack = head;
 	// printf("%d", a_stack->value);
 	
