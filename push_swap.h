@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/02 13:10:50 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/02 22:34:09 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ typedef struct s_stack
 void		pa(t_stack **a_stack, t_stack **b_stack);
 void		pb(t_stack **a_stack, t_stack **b_stack);
 //Swap
-void		sa(void);
-void		sb(void);
-void		ss(void);
+// void		sa(t_stack **a_stack);
+// void		sb(t_stack **b_stack);
+// void		ss(t_stack **a_stack, t_stack **b_stack);
 //Rotate
 void		ra(void);
 void		rb(void);
@@ -62,7 +62,7 @@ void		print_stacks(t_stack **a_stack, t_stack **b_stack);//Delete//
 t_stack		*parse_args(char **argv);
 
 // Linked lists
-t_stack		*ft_lstnew_mod(int value);
+t_stack		*ft_lstnew_mod(int value, int index);
 void		ft_lstadd_back_mod(t_stack **lst, t_stack *new);
 void		ft_lstadd_front_mod(t_stack **lst, t_stack *new);
 void		free_stack(t_stack **stack);
