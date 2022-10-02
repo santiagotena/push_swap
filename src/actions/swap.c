@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:30:31 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/02 23:49:23 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/03 00:20:06 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,6 @@ void	ss(t_stack **a_stack, t_stack **b_stack)
 {
 	sa(a_stack, 1);
 	sb(b_stack, 1);
-		ft_printf("ss\n");
+	ft_printf("ss\n");
 	return ;
 }
