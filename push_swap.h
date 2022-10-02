@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/02 23:33:32 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/02 23:49:46 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ typedef struct s_stack
 void		pa(t_stack **a_stack, t_stack **b_stack);
 void		pb(t_stack **a_stack, t_stack **b_stack);
 //Swap
-void		sa(t_stack **a_stack);
-void		sb(t_stack **b_stack);
-// void		ss(t_stack **a_stack, t_stack **b_stack);
+void		sa(t_stack **a_stack, int ss_call);
+void		sb(t_stack **b_stack, int ss_call);
+void		ss(t_stack **a_stack, t_stack **b_stack);
 //Rotate
 void		ra(void);
 void		rb(void);
