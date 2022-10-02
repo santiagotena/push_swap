@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 12:20:40 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/02 22:39:44 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/02 23:35:27 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,21 @@
 
 void	test_actions(t_stack **a_stack, t_stack **b_stack)
 {
-	pb(a_stack, b_stack);
-	print_stacks(a_stack, b_stack);
-	
-	pb(a_stack, b_stack);
-	print_stacks(a_stack, b_stack);
+	// pb(a_stack, b_stack);
+	// print_stacks(a_stack, b_stack);
+	// pb(a_stack, b_stack);
+	// print_stacks(a_stack, b_stack);
+	// pa(a_stack, b_stack);
+	// print_stacks(a_stack, b_stack);
+	// pb(a_stack, b_stack);
+	// print_stacks(a_stack, b_stack);
 
-	pa(a_stack, b_stack);
+	sa(a_stack);
 	print_stacks(a_stack, b_stack);
-	
 	pb(a_stack, b_stack);
+	pb(a_stack, b_stack);
+	print_stacks(a_stack, b_stack);
+	sb(b_stack);
 	print_stacks(a_stack, b_stack);
 }
 
