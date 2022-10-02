@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/02 23:49:46 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/03 00:48:40 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ void		sa(t_stack **a_stack, int ss_call);
 void		sb(t_stack **b_stack, int ss_call);
 void		ss(t_stack **a_stack, t_stack **b_stack);
 //Rotate
-void		ra(void);
-void		rb(void);
-void		rr(void);
+void		ra(t_stack **a_stack, int rr_call);
+void		rb(t_stack **b_stack, int rr_call);
+void		rr(t_stack **a_stack, t_stack **b_stack);
 //Reverse rotate
-void		rra(void);
-void		rrb(void);
-void		rrr(void);
+void		rra(t_stack **a_stack, int rrr_call);
+void		rrb(t_stack **b_stack, int rrr_call);
+void		rrr(t_stack **a_stack, t_stack **b_stack);
 //Test actions
 void		test_actions(t_stack **a_stack, t_stack **b_stack); //Delete
 void		read_stack(t_stack **stack);
