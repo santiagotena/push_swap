@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 23:25:09 by stena-he          #+#    #+#             */
-/*   Updated: 2022/09/30 19:14:27 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/02 22:45:39 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,16 @@ t_stack	*parse_args(char **argv)
 	t_stack		*a_stack;
 	t_stack		*node;
 	int			index;
-	long int	new;
+	int			new;
 
 	index = 1;
 	new = ft_atoi_mod(argv[index]);
-	a_stack = ft_lstnew_mod(new);
+	a_stack = ft_lstnew_mod(new, 0);
 	index++;
 	while (argv[index] != NULL)
 	{
 		new = ft_atoi_mod(argv[index]);
-		node = ft_lstnew_mod(new);
+		node = ft_lstnew_mod(new, 0);
 		ft_lstadd_back_mod(&a_stack, node);
 		index++;
 	}
@@ -71,5 +71,6 @@ t_stack	*parse_args(char **argv)
 		error_exit();
 	if (is_sorted(a_stack))
 		exit(0);
+	// add_index(&a_stack); Need to do
 	return (a_stack);
 }
