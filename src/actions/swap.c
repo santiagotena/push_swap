@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:30:31 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/02 23:41:37 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/02 23:49:23 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * 
  * @param a_stack 
  */
-void	sa(t_stack **a_stack)
+void	sa(t_stack **a_stack, int ss_call)
 {
 	t_stack	*node;
 	t_stack	*temp;
@@ -36,7 +36,8 @@ void	sa(t_stack **a_stack)
 	(*a_stack)->next = (*a_stack)->next->next;
 	free(temp);
 	ft_lstadd_front_mod(a_stack, node);
-	ft_printf("sa\n");
+	if (!ss_call)
+		ft_printf("sa\n");
 	return ;
 }
 
@@ -46,7 +47,7 @@ void	sa(t_stack **a_stack)
  * 
  * @param b_stack 
  */
-void	sb(t_stack **b_stack)
+void	sb(t_stack **b_stack, int ss_call)
 {
 	t_stack	*node;
 	t_stack	*temp;
@@ -64,7 +65,8 @@ void	sb(t_stack **b_stack)
 	(*b_stack)->next = (*b_stack)->next->next;
 	free(temp);
 	ft_lstadd_front_mod(b_stack, node);
-	ft_printf("sb\n");
+	if (!ss_call)
+		ft_printf("sb\n");
 	return ;
 }
 
@@ -74,9 +76,10 @@ void	sb(t_stack **b_stack)
  * @param a_stack 
  * @param b_stack 
  */
-// void	ss(t_stack **a_stack, t_stack **b_stack)
-// {
-	
-	
-// 	return ;
-// }
+void	ss(t_stack **a_stack, t_stack **b_stack)
+{
+	sa(a_stack, 1);
+	sb(b_stack, 1);
+		ft_printf("ss\n");
+	return ;
+}
