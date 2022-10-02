@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 12:27:35 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/02 22:47:43 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/02 23:36:18 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_stack	*ft_lstnew_mod(int value, int index)
 	{
 		output->value = value;
 		output->index = index;
-		output->next = NULL;	
+		output->next = NULL;
 	}
 	else
 	{

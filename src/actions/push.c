@@ -6,15 +6,15 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:30:29 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/02 22:50:22 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/02 23:39:41 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
 /**
- * @brief Take the first element at the top of stack B and put it at 
- * the top of stack A. Do nothing if B is empty.
+ * @brief Take the first element at the top of b and put it at the top of a.
+ * Do nothing if b is empty.
  * 
  * @param a_stack 
  * @param b_stack 
@@ -22,10 +22,10 @@
 void	pa(t_stack **a_stack, t_stack **b_stack)
 {
 	t_stack	*node;
-	t_stack *temp;
+	t_stack	*temp;
 	int		push_value;
 	int		index_value;
-	
+
 	if (!b_stack || !(*b_stack))
 		return ;
 	push_value = (*b_stack)->value;
@@ -40,8 +40,8 @@ void	pa(t_stack **a_stack, t_stack **b_stack)
 }
 
 /**
- * @brief Take the first element at the top of A and put it at 
- * the top of B. Do nothing if A is empty.
+ * @brief Take the first element at the top of a and put it at 
+ * the top of b. Do nothing if a is empty.
  * 
  * @param a_stack 
  * @param b_stack 
@@ -49,10 +49,10 @@ void	pa(t_stack **a_stack, t_stack **b_stack)
 void	pb(t_stack **a_stack, t_stack **b_stack)
 {
 	t_stack	*node;
-	t_stack *temp;
+	t_stack	*temp;
 	int		push_value;
 	int		index_value;
-	
+
 	if (!a_stack || !(*a_stack))
 		return ;
 	push_value = (*a_stack)->value;
