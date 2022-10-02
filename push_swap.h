@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/01 00:21:28 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/02 13:10:50 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,10 @@ void		rr(void);
 void		rra(void);
 void		rrb(void);
 void		rrr(void);
+//Test actions
+void		test_actions(t_stack **a_stack, t_stack **b_stack); //Delete
+void		read_stack(t_stack **stack);
+void		print_stacks(t_stack **a_stack, t_stack **b_stack);//Delete//
 
 // Parse Arguments //
 t_stack		*parse_args(char **argv);

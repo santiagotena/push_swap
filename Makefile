@@ -6,7 +6,7 @@
 #    By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 20:13:25 by stena-he          #+#    #+#              #
-#    Updated: 2022/09/28 12:33:40 by stena-he         ###   ########.fr        #
+#    Updated: 2022/10/02 12:27:15 by stena-he         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ SRC =	src/main.c \
 		src/actions/push.c \
 		src/actions/swap.c \
 		src/actions/rotate.c \
-		src/actions/reverse_rotate.c
+		src/actions/reverse_rotate.c \
+		src/actions/test_actions.c #Delete
 			
 OBJ = $(SRC:%.c=%.o)
 
