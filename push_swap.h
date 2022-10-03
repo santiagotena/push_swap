@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/03 00:48:40 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/03 14:50:23 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,20 @@ void		rr(t_stack **a_stack, t_stack **b_stack);
 void		rra(t_stack **a_stack, int rrr_call);
 void		rrb(t_stack **b_stack, int rrr_call);
 void		rrr(t_stack **a_stack, t_stack **b_stack);
-//Test actions
+
+// Test actions //
 void		test_actions(t_stack **a_stack, t_stack **b_stack); //Delete
 void		read_stack(t_stack **stack);
 void		print_stacks(t_stack **a_stack, t_stack **b_stack);//Delete//
 
+// Sort //
+void		ft_sort(t_stack **a_stack, t_stack **b_stack);
+
 // Parse Arguments //
 t_stack		*parse_args(char **argv);
 
-// Linked lists
+// Linked lists //
+int			ft_lst_len(t_stack **lst);
 t_stack		*ft_lstnew_mod(int value, int index);
 void		ft_lstadd_back_mod(t_stack **lst, t_stack *new);
 void		ft_lstadd_front_mod(t_stack **lst, t_stack *new);

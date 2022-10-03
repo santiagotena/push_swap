@@ -6,11 +6,29 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 12:27:35 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/02 23:36:18 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/03 15:10:25 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int		ft_lst_len(t_stack **lst)
+{
+	t_stack	*node;
+	int		len;
+
+	node = *lst;
+	len = 0;
+	if (!lst || !(*lst))
+		return (0);
+	while (node->next != NULL)
+	{
+		node = node->next;
+		len++;
+	}
+	len++;
+	return (len);
+}
 
 t_stack	*ft_lstnew_mod(int value, int index)
 {
