@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:45:12 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/04 23:21:21 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/04 23:43:10 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	sort_three(t_stack **a_stack)
 		sa(a_stack, 0);
 }
 
-void	sort_more(t_stack **a_stack, t_stack **b_stack)
+void	pass_to_b(t_stack **a_stack, t_stack **b_stack)
 {
 	t_stack	*node;
 	t_stack	*next_node;
@@ -55,16 +55,25 @@ void	sort_more(t_stack **a_stack, t_stack **b_stack)
 		pb(a_stack, b_stack);
 		elements--;
 	}
-	sort_three(a_stack);
 }
 
+void	pass_to_a(t_stack **a_stack, t_stack **b_stack)
+{
+	t_stack	*node_a;
+	t_stack	*node_b;
+
+	node_a = *a_stack;
+	node_b = *b_stack;
+}
 // print_stacks(a_stack, b_stack);
 // printf("%d %d %d %d\n", node->value, node->index, len, len/2);
 
-// First, we can push all of the smaller values. So, if an element has a smaller 
-// index than the middle index of all the elements (the total number of values to sort divided by 2), 
-// we can push it to stack B. Otherwise, we rotate A. After that, we can freely pb all the rest of the 
-// elements except for the last three that will remain in stack A.
+void	sort_more(t_stack **a_stack, t_stack **b_stack)
+{
+	pass_to_b(a_stack, b_stack);
+	sort_three(a_stack);
+	pass_to_a(a_stack, b_stack);
+}
 
 void	ft_sort(t_stack **a_stack, t_stack **b_stack)
 {
