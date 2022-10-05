@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 12:20:40 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/05 16:17:40 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/05 17:32:10 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ void	test_actions(t_stack **a_stack, t_stack **b_stack)
 {
 	//Push
 	
-	// pb(a_stack, b_stack);
-	// print_stacks(a_stack, b_stack);
-	// pb(a_stack, b_stack);
-	// print_stacks(a_stack, b_stack);
-	// pa(a_stack, b_stack);
-	// print_stacks(a_stack, b_stack);
-	// pb(a_stack, b_stack);
-	// print_stacks(a_stack, b_stack);
+	pb(a_stack, b_stack);
+	print_stacks(a_stack, b_stack);
+	pb(a_stack, b_stack);
+	print_stacks(a_stack, b_stack);
+	pa(a_stack, b_stack);
+	print_stacks(a_stack, b_stack);
+	pb(a_stack, b_stack);
+	print_stacks(a_stack, b_stack);
 
 	// //Swap
 	
@@ -48,7 +48,6 @@ void	test_actions(t_stack **a_stack, t_stack **b_stack)
 	
 	// ra(a_stack, 0);
 	// print_stacks(a_stack, b_stack);
-
 	// pb(a_stack, b_stack);
 	// pb(a_stack, b_stack);
 	// pb(a_stack, b_stack);
@@ -69,7 +68,6 @@ void	test_actions(t_stack **a_stack, t_stack **b_stack)
 
 	// rra(a_stack, 0);
 	// print_stacks(a_stack, b_stack);
-
 	// pb(a_stack, b_stack);
 	// pb(a_stack, b_stack);
 	// pb(a_stack, b_stack);
