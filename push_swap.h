@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/05 09:56:28 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/05 12:36:40 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ t_stack		*parse_args(char **argv);
 // Linked lists //
 int			ft_lst_len(t_stack **lst);
 t_stack		*ft_lstnew_mod(int value, int index);
+t_stack		*add_lsvalues(t_stack **stack);
 void		ft_lstadd_back_mod(t_stack **lst, t_stack *new);
 void		ft_lstadd_front_mod(t_stack **lst, t_stack *new);
 void		free_stack(t_stack **stack);
