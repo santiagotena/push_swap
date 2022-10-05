@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:30:31 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/05 12:46:17 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/05 16:04:53 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	sa(t_stack **a_stack, int ss_call)
 		return ;
 	if ((*a_stack)->next == NULL)
 		return ;
-	node = add_lsvalues(a_stack);
+	node = add_lsvalues(&(*a_stack)->next);
 	temp = (*a_stack)->next;
 	(*a_stack)->next = (*a_stack)->next->next;
 	free(temp);
@@ -52,7 +52,7 @@ void	sb(t_stack **b_stack, int ss_call)
 		return ;
 	if ((*b_stack)->next == NULL)
 		return ;
-	node = add_lsvalues(b_stack);
+	node = add_lsvalues(&(*b_stack)->next);
 	temp = (*b_stack)->next;
 	(*b_stack)->next = (*b_stack)->next->next;
 	free(temp);

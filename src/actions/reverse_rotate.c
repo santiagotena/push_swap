@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:30:50 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/05 12:48:26 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/05 16:15:15 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	rra(t_stack **a_stack, int rrr_call)
 	last_node = *a_stack;
 	while (last_node->next->next != NULL)
 		last_node = last_node->next;
-	node = add_lsvalues(a_stack);
+	node = add_lsvalues(&last_node->next);
 	ft_lstadd_front_mod(a_stack, node);
 	temp = last_node->next;
 	free(temp);
@@ -63,7 +63,7 @@ void	rrb(t_stack **b_stack, int rrr_call)
 	last_node = *b_stack;
 	while (last_node->next->next != NULL)
 		last_node = last_node->next;
-	node = add_lsvalues(b_stack);
+	node = add_lsvalues(&last_node->next);
 	ft_lstadd_front_mod(b_stack, node);
 	temp = last_node->next;
 	free(temp);
