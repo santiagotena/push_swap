@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 12:20:40 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/05 10:44:10 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/05 11:33:35 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,13 +101,11 @@ void	read_stack(t_stack **stack)
 	last_node = *stack;
 	if (*stack == NULL)
 		return ;
-	// ft_printf("%d %d\n", last_node->value, last_node->index);
-	ft_printf("%d\n", last_node->target_pos);
-	while (last_node->next != NULL)
+	while (last_node)
 	{
-		last_node = last_node->next;
 		// ft_printf("%d %d\n", last_node->value, last_node->index);
-		ft_printf("%d\n", last_node->pos);
+		ft_printf("%d\n", last_node->target_pos);
+		last_node = last_node->next;
 	}
 	return ;
 }
