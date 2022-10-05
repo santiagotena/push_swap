@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 12:20:40 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/05 15:35:18 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:38:45 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,17 +106,18 @@ void	read_stack(t_stack **stack)
 	int		tp;
 	int		ca;
 	int		cb;
-	
+
 	node = *stack;
-	val = node->value;
-	ind = node->index;
-	pos = node->pos;
-	tp = node->target_pos;
-	ca = node->cost_a;
-	cb = node->cost_b;
+	
 		ft_printf("val ind pos tp\n");
 	while (node)
 	{
+		val = node->value;
+		ind = node->index;
+		pos = node->pos;
+		tp = node->target_pos;
+		ca = node->cost_a;
+		cb = node->cost_b;
 		ft_printf("%d   %d   %d   %d\n", val, ind, pos, tp);
 		// ft_printf("%d\n", node->target_pos);
 		node = node->next;
