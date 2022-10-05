@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:30:50 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/03 14:08:23 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/05 12:48:26 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	rra(t_stack **a_stack, int rrr_call)
 	t_stack	*node;
 	t_stack	*temp;
 	t_stack	*last_node;
-	int		rotate_value;
-	int		index_value;
 
 	if (!a_stack || !(*a_stack))
 		return ;
@@ -34,9 +32,7 @@ void	rra(t_stack **a_stack, int rrr_call)
 	last_node = *a_stack;
 	while (last_node->next->next != NULL)
 		last_node = last_node->next;
-	rotate_value = (last_node)->next->value;
-	index_value = (last_node)->next->index;
-	node = ft_lstnew_mod(rotate_value, index_value);
+	node = add_lsvalues(a_stack);
 	ft_lstadd_front_mod(a_stack, node);
 	temp = last_node->next;
 	free(temp);
@@ -59,8 +55,6 @@ void	rrb(t_stack **b_stack, int rrr_call)
 	t_stack	*node;
 	t_stack	*temp;
 	t_stack	*last_node;
-	int		rotate_value;
-	int		index_value;
 
 	if (!b_stack || !(*b_stack))
 		return ;
@@ -69,9 +63,7 @@ void	rrb(t_stack **b_stack, int rrr_call)
 	last_node = *b_stack;
 	while (last_node->next->next != NULL)
 		last_node = last_node->next;
-	rotate_value = (last_node)->next->value;
-	index_value = (last_node)->next->index;
-	node = ft_lstnew_mod(rotate_value, index_value);
+	node = add_lsvalues(b_stack);
 	ft_lstadd_front_mod(b_stack, node);
 	temp = last_node->next;
 	free(temp);

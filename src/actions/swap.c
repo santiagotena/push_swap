@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:30:31 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/03 00:20:06 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/05 12:46:17 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,12 @@ void	sa(t_stack **a_stack, int ss_call)
 {
 	t_stack	*node;
 	t_stack	*temp;
-	int		swap_value;
-	int		index_value;
 
 	if (!a_stack || !(*a_stack))
 		return ;
 	if ((*a_stack)->next == NULL)
 		return ;
-	swap_value = (*a_stack)->next->value;
-	index_value = (*a_stack)->next->index;
-	node = ft_lstnew_mod(swap_value, index_value);
+	node = add_lsvalues(a_stack);
 	temp = (*a_stack)->next;
 	(*a_stack)->next = (*a_stack)->next->next;
 	free(temp);
@@ -51,16 +47,12 @@ void	sb(t_stack **b_stack, int ss_call)
 {
 	t_stack	*node;
 	t_stack	*temp;
-	int		swap_value;
-	int		index_value;
-
+	
 	if (!b_stack || !(*b_stack))
 		return ;
 	if ((*b_stack)->next == NULL)
 		return ;
-	swap_value = (*b_stack)->next->value;
-	index_value = (*b_stack)->next->index;
-	node = ft_lstnew_mod(swap_value, index_value);
+	node = add_lsvalues(b_stack);
 	temp = (*b_stack)->next;
 	(*b_stack)->next = (*b_stack)->next->next;
 	free(temp);
