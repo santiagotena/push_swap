@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 12:27:35 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/03 15:57:31 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/05 11:52:07 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,10 @@ t_stack	*ft_lstnew_mod(int value, int index)
 	output = malloc(sizeof(t_stack));
 	if (!output)
 		return (NULL);
+	output->value = value;
+	output->next = NULL;
 	if (index)
-	{
-		output->value = value;
 		output->index = index;
-		output->next = NULL;
-	}
-	else
-	{
-		output->value = value;
-		output->next = NULL;
-	}
 	return (output);
 }
 
