@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 12:27:35 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/05 11:52:07 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/05 12:36:38 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,19 @@ t_stack	*ft_lstnew_mod(int value, int index)
 	if (index)
 		output->index = index;
 	return (output);
+}
+
+t_stack	*add_lsvalues(t_stack **stack)
+{
+	t_stack	*node;
+	
+	node = malloc(sizeof(t_stack));
+	node->value = (*stack)->value;
+	node->index = (*stack)->index;
+	node->target_pos = (*stack)->pos;
+	node->target_pos = (*stack)->target_pos;
+	node->next = NULL;
+	return (node);
 }
 
 void	ft_lstadd_back_mod(t_stack **lst, t_stack *new)
