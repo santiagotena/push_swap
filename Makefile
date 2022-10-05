@@ -6,7 +6,7 @@
 #    By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 20:13:25 by stena-he          #+#    #+#              #
-#    Updated: 2022/10/03 14:46:03 by stena-he         ###   ########.fr        #
+#    Updated: 2022/10/05 09:26:53 by stena-he         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ PRINTF = libraries/ft_printf/libftprintf.a
 SRC =	src/main.c \
 		src/parse_args.c \
 		src/ft_sort.c \
+		src/pass_to_a.c \
 		src/linked_lists.c \
 		src/utils.c \
 		src/actions/push.c \
