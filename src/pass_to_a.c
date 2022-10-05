@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/05 14:46:21 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:25:40 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	find_target_pos(t_stack **a_stack, t_stack **b_stack)
 			min_a_index = node_a->index;
 		node_a = node_a->next;
 	}
-	// node_a = *a_stack;
+	node_a = *a_stack;
 	
 	// while (is_change)
 	// {
@@ -88,6 +88,7 @@ void	find_target_pos(t_stack **a_stack, t_stack **b_stack)
 	// 		if (start_tp != node_b->target_pos)
 	// 			is_change = 1;
 	// 	}
+	// 	node_b = *b_stack;
 	// }
 	
 	// print_stacks(a_stack, b_stack);
