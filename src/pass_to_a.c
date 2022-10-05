@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/05 16:20:18 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/05 17:38:52 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void	find_target_pos(t_stack **a_stack, t_stack **b_stack)
 	}
 	node_a = *a_stack;
 
+	// printf("\n\n%d %d\n\n", min_a_index, max_a_index);
+
 	while (is_change)
 	{
 		is_change = 0;
@@ -90,8 +92,7 @@ void	find_target_pos(t_stack **a_stack, t_stack **b_stack)
 		}
 		node_b = *b_stack;
 	}
-	
-	print_stacks(a_stack, b_stack);
+	// print_stacks(a_stack, b_stack);
 }
 
 void	pass_to_a(t_stack **a_stack, t_stack **b_stack)
@@ -99,6 +100,7 @@ void	pass_to_a(t_stack **a_stack, t_stack **b_stack)
 	//Add loop here
 	//while (b_stack)
 	add_pos(a_stack, b_stack);
+	// print_stacks(a_stack, b_stack);
 	find_target_pos(a_stack, b_stack);
 }
 // print_stacks(a_stack, b_stack);
