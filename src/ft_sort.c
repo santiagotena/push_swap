@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:45:12 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/05 11:13:14 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/05 12:56:06 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ void	pass_to_b(t_stack **a_stack, t_stack **b_stack)
 	}
 }
 
-void	sort_more(t_stack **a_stack, t_stack **b_stack, int max_index)
+void	sort_more(t_stack **a_stack, t_stack **b_stack)
 {
 	pass_to_b(a_stack, b_stack);
 	sort_three(a_stack);
-	pass_to_a(a_stack, b_stack, max_index);
+	pass_to_a(a_stack, b_stack);
 	// print_stacks(a_stack, b_stack); //Delete
 }
 
@@ -80,5 +80,5 @@ void	ft_sort(t_stack **a_stack, t_stack **b_stack)
 		sort_three(a_stack);
 		return ;
 	}	
-	sort_more(a_stack, b_stack, a_stack_len);
+	sort_more(a_stack, b_stack);
 }
