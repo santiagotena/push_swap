@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/06 19:01:29 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/07 11:42:11 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,3 @@ void	add_pos(t_stack **a_stack, t_stack **b_stack)
 		node_b = node_b->next;
 	}
 }
-
-void	pass_to_a(t_stack **a_stack, t_stack **b_stack)
-{
-	//Add loop here
-	//while (b_stack)
-	add_pos(a_stack, b_stack);
-	find_tp(a_stack, b_stack);
-}
-// print_stacks(a_stack, b_stack);

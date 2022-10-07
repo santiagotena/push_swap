@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:45:12 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/05 12:56:06 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/07 11:51:39 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,11 @@ void	sort_more(t_stack **a_stack, t_stack **b_stack)
 {
 	pass_to_b(a_stack, b_stack);
 	sort_three(a_stack);
-	pass_to_a(a_stack, b_stack);
+	//Add loop here
+	//while (b_stack (node_b))
+	add_pos(a_stack, b_stack);
+	find_tp(a_stack, b_stack);
+	// calc_cost(a_stack, b_stack);
 	// print_stacks(a_stack, b_stack); //Delete
 }
 
