@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/07 11:52:24 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/07 12:28:00 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ void		ft_lstadd_front_mod(t_stack **lst, t_stack *new);
 void		free_stack(t_stack **stack);
 
 // Utils //
-int			ft_atoi_mod(const char *str);
 void		error_exit(void);
+int			abs_val(int nb);
+int			ft_atoi_mod(const char *str);
 
 #endif
