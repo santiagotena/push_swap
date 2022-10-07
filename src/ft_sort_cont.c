@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pass_to_a.c                                        :+:      :+:    :+:   */
+/*   ft_sort_cont.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/07 11:42:11 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/07 12:09:22 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	calc_cost(t_stack **a_stack, t_stack **b_stack)
+{
+	t_stack	*node_a;
+	t_stack	*node_b;
+	int		len_a;
+	int		len_b;
+
+	node_a = *a_stack;
+	node_b = *b_stack;
+	len_a = ft_lst_len(a_stack);
+	len_b = ft_lst_len(b_stack);
+		
+}
 
 void	find_tp_cont(t_stack **a_stack, t_stack **b_stack,
 			int max_a_index, int min_a_index)
