@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/07 12:09:22 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/07 12:39:08 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,19 @@ void	calc_cost(t_stack **a_stack, t_stack **b_stack)
 {
 	t_stack	*node_a;
 	t_stack	*node_b;
-	int		len_a;
-	int		len_b;
+	int		mid_a;
+	int		mid_b;
 
 	node_a = *a_stack;
 	node_b = *b_stack;
-	len_a = ft_lst_len(a_stack);
-	len_b = ft_lst_len(b_stack);
+	mid_a = ft_lst_len(a_stack)/2;
+	mid_b = ft_lst_len(b_stack)/2;
+	while (node_b)
+	{
+		// if (node_b->pos < mid_b)
+			
+		node_b = node_b->next;
+	}
 		
 }
 
