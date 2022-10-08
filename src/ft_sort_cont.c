@@ -6,30 +6,112 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/07 12:39:08 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 03:11:48 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+void	exec_act(t_stack **a_stack, t_stack **b_stack)
+{
+	t_stack	*node_b;
+	t_stack	*lowest_node;
+	int		lowest_cost;
+	int		cost;
+	
+	node_b = *b_stack;
+	lowest_node = *b_stack;
+	lowest_cost = abs_val(node_b->cost_a) + abs_val(node_b->cost_b);
+	if (node_b->next == NULL)
+		node_b->cost_b = 0;
+	while (node_b)
+	{
+		cost = abs_val(node_b->cost_a) + abs_val(node_b->cost_b);
+		if (cost < lowest_cost)
+		{
+			lowest_cost = cost;
+			lowest_node = node_b;
+		}
+		node_b = node_b->next;
+	}
+	while (lowest_node->cost_a != 0 || lowest_node->cost_b != 0)
+	{
+		if (lowest_node->cost_a > 0 && lowest_node->cost_b > 0)
+		{
+			rr(a_stack, b_stack);
+			lowest_node->cost_a--;
+			lowest_node->cost_b--;
+		}
+		else if (lowest_node->cost_a < 0 && lowest_node->cost_b < 0)
+		{
+			rrr(a_stack, b_stack);
+			lowest_node->cost_a++;
+			lowest_node->cost_b++;
+		}
+		else
+		{
+			if (lowest_node->cost_a > 0)
+			{
+				ra(a_stack, 0);
+				lowest_node->cost_a--;
+			}
+			if (lowest_node->cost_b > 0)
+			{
+				rb(b_stack, 0);
+				lowest_node->cost_b--;
+			}
+			if (lowest_node->cost_a < 0)
+			{
+				rra(a_stack, 0);
+				lowest_node->cost_a++;
+			}
+			if (lowest_node->cost_b < 0)
+			{
+				rrb(b_stack, 0);
+				lowest_node->cost_b++;
+			}
+		}
+		
+	}
+}
+
 void	calc_cost(t_stack **a_stack, t_stack **b_stack)
 {
 	t_stack	*node_a;
 	t_stack	*node_b;
-	int		mid_a;
-	int		mid_b;
+	int		a_len;
+	int		b_len;
 
 	node_a = *a_stack;
 	node_b = *b_stack;
-	mid_a = ft_lst_len(a_stack)/2;
-	mid_b = ft_lst_len(b_stack)/2;
+	a_len = ft_lst_len(a_stack);
+	b_len = ft_lst_len(b_stack);
 	while (node_b)
 	{
-		// if (node_b->pos < mid_b)
-			
+		if (node_b->pos + 1 <= b_len/2)
+			node_b->cost_b = node_b->pos;
+		else
+			node_b->cost_b = ((b_len - 1) - node_b->pos + 1) * -1;
 		node_b = node_b->next;
 	}
-		
+	node_b = *b_stack;
+	while (node_b)
+	{
+		while (node_a)
+		{
+			if (node_b->target_pos == node_a->pos)
+			{
+				if (node_a->pos + 1 <= a_len/2)
+					node_b->cost_a = node_a->pos;
+				else
+					node_b->cost_a = ((a_len - 1) - node_a->pos + 1) * -1;
+			}
+			node_a = node_a->next;
+		}
+		node_a = *a_stack;
+		node_b = node_b->next;
+	}
+	node_b = *b_stack;
 }
 
 void	find_tp_cont(t_stack **a_stack, t_stack **b_stack,

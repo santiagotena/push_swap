@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:45:12 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/07 11:52:22 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 03:02:02 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,22 @@ void	pass_to_b(t_stack **a_stack, t_stack **b_stack)
 
 void	sort_more(t_stack **a_stack, t_stack **b_stack)
 {
+	// t_stack	*node_b;
+	
+	// node_b = *b_stack;
 	pass_to_b(a_stack, b_stack);
 	sort_three(a_stack);
-	//Add loop here
-	//while (b_stack (node_b))
-	add_pos(a_stack, b_stack);
-	find_tp(a_stack, b_stack);
-	calc_cost(a_stack, b_stack);
+	while (*b_stack)
+	{
+		add_pos(a_stack, b_stack);
+		find_tp(a_stack, b_stack);
+		calc_cost(a_stack, b_stack);
+		print_stacks(a_stack, b_stack); //Delete
+		exec_act(a_stack, b_stack);
+		// print_stacks(a_stack, b_stack); //Delete
+		pa(a_stack, b_stack);
+		// print_stacks(a_stack, b_stack); //Delete
+	}
 	// print_stacks(a_stack, b_stack); //Delete
 }
 
