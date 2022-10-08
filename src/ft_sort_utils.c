@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pass_to_a_utils.c                                  :+:      :+:    :+:   */
+/*   ft_sort_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:49:40 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/06 19:01:16 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 14:07:08 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,26 @@ int	get_maxind(t_stack **stack, t_stack *node)
 	return (max_a_index);
 }
 
-int	get_minind(t_stack **stack, t_stack *node, int max_a_index)
+void	tp_high_index(t_stack **a_stack, t_stack **b_stack, int max_a_index)
 {
-	int	min_a_index;
+	t_stack	*node_a;
+	t_stack	*node_b;
+	t_stack	*low_ind_a_node;
 
-	min_a_index = max_a_index;
-	while (node)
+	node_a = *a_stack;
+	node_b = *b_stack;
+	low_ind_a_node = *a_stack;
+	while (node_a)
 	{
-		if (min_a_index > node->index)
-			min_a_index = node->index;
-		node = node->next;
+		if (node_a->index < low_ind_a_node->index)
+			low_ind_a_node = node_a;
+		node_a = node_a->next;
 	}
-	node = *stack;
-	return (min_a_index);
-}
-
-void	tp_high_index(t_stack **b_stack, t_stack *node_b,
-			int max_a_index, int min_a_index)
-{
+	node_a = *a_stack;
 	while (node_b)
 	{
 		if (node_b->index > max_a_index)
-			node_b->target_pos = min_a_index;
+			node_b->target_pos = low_ind_a_node->pos;
 		node_b = node_b->next;
 	}
 	node_b = *b_stack;
