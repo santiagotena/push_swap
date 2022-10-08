@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/08 04:12:13 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 04:55:25 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ void	calc_cost(t_stack **a_stack, t_stack **b_stack)
 	b_len = ft_lst_len(b_stack);
 	while (node_b)
 	{
-		if (node_b->pos + 1 <= b_len/2)
+		if (node_b->pos + 1 < b_len/2)
 			node_b->cost_b = node_b->pos;
 		else
 			node_b->cost_b = ((b_len - 1) - node_b->pos + 1) * -1;
@@ -135,7 +135,7 @@ void	calc_cost(t_stack **a_stack, t_stack **b_stack)
 		{
 			if (node_b->target_pos == node_a->pos)
 			{
-				if (node_a->pos + 1 <= a_len/2)
+				if (node_a->pos + 1 < a_len/2)
 					node_b->cost_a = node_a->pos;
 				else
 					node_b->cost_a = ((a_len - 1) - node_a->pos + 1) * -1;
