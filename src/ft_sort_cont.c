@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/08 14:07:31 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 14:16:58 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,40 +71,28 @@ void	exec_act(t_stack **a_stack, t_stack **b_stack)
 	while (lowest_node->cost_a != 0 || lowest_node->cost_b != 0)
 	{
 		if (lowest_node->cost_a > 0 && lowest_node->cost_b > 0)
-		{
 			rr(a_stack, b_stack);
-			lowest_node->cost_a--;
-			lowest_node->cost_b--;
-		}
 		else if (lowest_node->cost_a < 0 && lowest_node->cost_b < 0)
-		{
 			rrr(a_stack, b_stack);
-			lowest_node->cost_a++;
-			lowest_node->cost_b++;
-		}
 		else
 		{
 			if (lowest_node->cost_a > 0)
-			{
 				ra(a_stack, 0);
-				lowest_node->cost_a--;
-			}
 			if (lowest_node->cost_b > 0)
-			{
 				rb(b_stack, 0);
-				lowest_node->cost_b--;
-			}
 			if (lowest_node->cost_a < 0)
-			{
 				rra(a_stack, 0);
-				lowest_node->cost_a++;
-			}
 			if (lowest_node->cost_b < 0)
-			{
 				rrb(b_stack, 0);
-				lowest_node->cost_b++;
-			}
 		}
+			if (lowest_node->cost_a > 0)
+				lowest_node->cost_a--;
+			if (lowest_node->cost_b > 0)
+				lowest_node->cost_b--;
+			if (lowest_node->cost_a < 0)
+				lowest_node->cost_a++;
+			if (lowest_node->cost_b < 0)
+				lowest_node->cost_b++;
 		
 	}
 }
