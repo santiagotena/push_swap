@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 12:27:35 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/05 12:44:32 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 18:08:37 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,10 @@ t_stack	*add_lsvalues(t_stack **stack)
 		return (NULL);
 	node->value = (*stack)->value;
 	node->index = (*stack)->index;
-	node->target_pos = (*stack)->pos;
+	node->pos = (*stack)->pos;
 	node->target_pos = (*stack)->target_pos;
+	node->cost_a = (*stack)->cost_a;
+	node->cost_b = (*stack)->cost_b;
 	node->next = NULL;
 	return (node);
 }
