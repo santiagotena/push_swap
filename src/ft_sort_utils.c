@@ -6,16 +6,18 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:49:40 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/08 14:07:08 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:25:14 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	get_maxind(t_stack **stack, t_stack *node)
+int	get_maxind(t_stack **stack)
 {
+	t_stack	*node;
 	int	max_a_index;
 
+	node = *stack;
 	while (node)
 	{
 		if (max_a_index < node->index)

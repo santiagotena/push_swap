@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/08 14:06:58 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:25:23 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void		exec_act(t_stack **a_stack, t_stack **b_stack);
 void		final_sort(t_stack **a_stack);
 
 // Sort utils
-int			get_maxind(t_stack **stack, t_stack *node);
+int			get_maxind(t_stack **stack);
 void		tp_high_index(t_stack **a_stack, t_stack **b_stack, int max_a_index);
 
 // Parse arguments //
