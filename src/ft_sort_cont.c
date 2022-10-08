@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/08 16:53:00 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:55:31 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ void	exec_act(t_stack **a_stack, t_stack **b_stack)
 	node_b = *b_stack;
 	lowest_node = *b_stack;
 	lowest_cost = abs_val(node_b->cost_a) + abs_val(node_b->cost_b);
-	if (node_b->next == NULL)
-		node_b->cost_b = 0;
 	while (node_b)
 	{
 		cost = abs_val(node_b->cost_a) + abs_val(node_b->cost_b);
@@ -158,7 +156,7 @@ void	find_tp(t_stack **a_stack, t_stack **b_stack)
 	
 	node_a = *a_stack;
 	node_b = *b_stack;
-	max_a_index = get_maxind(a_stack, node_a);
+	max_a_index = get_maxind(a_stack);
 	find_tp_cont(a_stack, b_stack, max_a_index);
 }
 
