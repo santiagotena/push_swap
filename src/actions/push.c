@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:30:29 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/05 12:40:14 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 15:23:49 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	pa(t_stack **a_stack, t_stack **b_stack)
 	temp = *b_stack;
 	*b_stack = (*b_stack)->next;
 	free(temp);
-	ft_printf("pa\n");
+	ft_putstr_fd("pa\n", 1);
 	return ;
 }
 
@@ -54,6 +54,6 @@ void	pb(t_stack **a_stack, t_stack **b_stack)
 	temp = *a_stack;
 	*a_stack = (*a_stack)->next;
 	free(temp);
-	ft_printf("pb\n");
+	ft_putstr_fd("pb\n", 1);
 	return ;
 }

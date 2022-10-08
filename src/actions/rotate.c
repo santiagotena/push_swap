@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:30:34 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/05 12:47:40 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 15:25:24 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ra(t_stack **a_stack, int rr_call)
 	free(*a_stack);
 	*a_stack = temp;
 	if (!rr_call)
-		ft_printf("ra\n");
+		ft_putstr_fd("ra\n", 1);
 	return ;
 }
 
@@ -60,7 +60,7 @@ void	rb(t_stack **b_stack, int rr_call)
 	free(*b_stack);
 	*b_stack = temp;
 	if (!rr_call)
-		ft_printf("rb\n");
+		ft_putstr_fd("rb\n", 1);
 	return ;
 }
 
@@ -74,6 +74,6 @@ void	rr(t_stack **a_stack, t_stack **b_stack)
 {
 	ra(a_stack, 1);
 	rb(b_stack, 1);
-	ft_printf("rr\n");
+	ft_putstr_fd("rr\n", 1);
 	return ;
 }
