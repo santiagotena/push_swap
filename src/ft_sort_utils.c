@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:49:40 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/08 17:25:14 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 17:58:19 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	get_maxind(t_stack **stack)
 	return (max_a_index);
 }
 
-void	tp_high_index(t_stack **a_stack, t_stack **b_stack, int max_a_index)
+void	tp_high_index(t_stack **a_stack, t_stack **b_stack, int max_a_ind)
 {
 	t_stack	*node_a;
 	t_stack	*node_b;
@@ -46,7 +46,7 @@ void	tp_high_index(t_stack **a_stack, t_stack **b_stack, int max_a_index)
 	node_a = *a_stack;
 	while (node_b)
 	{
-		if (node_b->index > max_a_index)
+		if (node_b->index > max_a_ind)
 			node_b->target_pos = low_ind_a_node->pos;
 		node_b = node_b->next;
 	}
