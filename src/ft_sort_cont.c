@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/08 16:21:38 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 16:53:00 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ void	exec_act(t_stack **a_stack, t_stack **b_stack)
 	}
 }
 
-//Need to improve
 void	calc_cost(t_stack **a_stack, t_stack **b_stack)
 {
 	t_stack	*node_a;
@@ -111,30 +110,14 @@ void	calc_cost(t_stack **a_stack, t_stack **b_stack)
 	b_len = ft_lst_len(b_stack);
 	while (node_b)
 	{
-		if (node_b->pos + 1 < b_len/2)
-			node_b->cost_b = node_b->pos;
-		else
-			node_b->cost_b = ((b_len - 1) - node_b->pos + 1) * -1;
+		node_b->cost_b = node_b->pos;
+		if (node_b->pos > b_len / 2)
+			node_b->cost_b = (b_len - node_b->pos) * -1;
+		node_b->cost_a = node_b->target_pos;
+		if (node_b->target_pos > a_len / 2)
+			node_b->cost_a = (a_len - node_b->target_pos) * -1;
 		node_b = node_b->next;
 	}
-	node_b = *b_stack;
-	while (node_b)
-	{
-		while (node_a)
-		{
-			if (node_b->target_pos == node_a->pos)
-			{
-				if (node_a->pos + 1 < a_len/2)
-					node_b->cost_a = node_a->pos;
-				else
-					node_b->cost_a = ((a_len - 1) - node_a->pos + 1) * -1;
-			}
-			node_a = node_a->next;
-		}
-		node_a = *a_stack;
-		node_b = node_b->next;
-	}
-	node_b = *b_stack;
 }
 
 // Need to improve
