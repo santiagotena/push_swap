@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/08 14:16:58 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 16:21:38 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ void	exec_act(t_stack **a_stack, t_stack **b_stack)
 	}
 }
 
+//Need to improve
 void	calc_cost(t_stack **a_stack, t_stack **b_stack)
 {
 	t_stack	*node_a;
@@ -136,6 +137,7 @@ void	calc_cost(t_stack **a_stack, t_stack **b_stack)
 	node_b = *b_stack;
 }
 
+// Need to improve
 void	find_tp_cont(t_stack **a_stack, t_stack **b_stack, int max_a_index)
 {
 	t_stack	*node_a;
