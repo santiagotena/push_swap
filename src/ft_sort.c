@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:45:12 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/08 13:55:01 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 14:23:44 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ void	sort_more(t_stack **a_stack, t_stack **b_stack)
 		pa(a_stack, b_stack);
 	}
 	final_sort(a_stack);
-	// print_stacks(a_stack, b_stack); //Delete
 }
 
 void	ft_sort(t_stack **a_stack, t_stack **b_stack)
