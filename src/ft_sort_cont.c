@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/08 17:55:31 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 18:05:44 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ void	exec_act(t_stack **a_stack, t_stack **b_stack)
 	node_b = *b_stack;
 	lowest_node = *b_stack;
 	lowest_cost = abs_val(node_b->cost_a) + abs_val(node_b->cost_b);
+	if (node_b->next == NULL)
+		return ;
 	while (node_b)
 	{
 		cost = abs_val(node_b->cost_a) + abs_val(node_b->cost_b);
