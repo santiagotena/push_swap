@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:45:12 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/08 14:23:44 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/09 20:27:24 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,18 @@ void	sort_three(t_stack **a_stack)
 void	pass_to_b(t_stack **a_stack, t_stack **b_stack)
 {
 	t_stack	*node;
-	t_stack	*next_node;
 	int		elements;
-	int		len;
 
 	node = *a_stack;
 	elements = ft_lst_len(a_stack);
-	len = elements;
 	while (elements > 0)
 	{
-		next_node = node->next;
-		if (node->index < len / 2)
+		if (node->index <= elements / 2)
 			pb(a_stack, b_stack);
 		else
 			ra(a_stack, 0);
-		node = next_node;
 		elements--;
 	}
-	node = *a_stack;
 	elements = ft_lst_len(a_stack);
 	while (elements > 3)
 	{
@@ -61,15 +55,21 @@ void	sort_more(t_stack **a_stack, t_stack **b_stack)
 {
 	pass_to_b(a_stack, b_stack);
 	sort_three(a_stack);
-	while (*b_stack)
-	{
-		add_pos(a_stack, b_stack);
-		find_tp(a_stack, b_stack);
-		calc_cost(a_stack, b_stack);
-		exec_act(a_stack, b_stack);
-		pa(a_stack, b_stack);
-	}
-	final_sort(a_stack);
+	// while (*b_stack)
+	// {
+	// 	add_pos(a_stack, b_stack);
+	// 	find_tp(a_stack, b_stack);
+	// 	calc_cost(a_stack, b_stack);
+	// 	exec_act(a_stack, b_stack);
+	// 	pa(a_stack, b_stack);
+	// }
+	// final_sort(a_stack);
+
+	add_pos(a_stack, b_stack);
+	// find_tp(a_stack, b_stack);
+	// calc_cost(a_stack, b_stack);
+	// exec_act(a_stack, b_stack);
+	// pa(a_stack, b_stack);
 }
 
 void	ft_sort(t_stack **a_stack, t_stack **b_stack)

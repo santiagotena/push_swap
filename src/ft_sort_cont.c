@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/08 18:05:44 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/08 19:00:37 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,6 @@ void	exec_act(t_stack **a_stack, t_stack **b_stack)
 				lowest_node->cost_a++;
 			if (lowest_node->cost_b < 0)
 				lowest_node->cost_b++;
-		
 	}
 }
 
@@ -147,7 +146,6 @@ void	find_tp_cont(t_stack **a_stack, t_stack **b_stack, int max_a_index)
 		node_a = *a_stack;
 		node_b = node_b->next;
 	}
-	node_b = *b_stack;
 }
 
 void	find_tp(t_stack **a_stack, t_stack **b_stack)
