@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:49:40 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/09 21:01:01 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/10 00:25:43 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,41 +28,21 @@ int	get_maxind(t_stack **stack)
 	return (max_a_index);
 }
 
-// int	get_minind(t_stack **stack)
-// {
-// 	t_stack	*node;
-// 	int	min_a_index;
-
-// 	node = *stack;
-// 	min_a_index = 2147483647;
-// 	while (node)
-// 	{
-// 		if (min_a_index > node->index)
-// 			min_a_index = node->index;
-// 		node = node->next;
-// 	}
-// 	return (min_a_index);
-// }
-
-// void	tp_high_index(t_stack **a_stack, t_stack **b_stack, int max_a_ind)
-// {
-// 	t_stack	*node_a;
-// 	t_stack	*node_b;
-// 	t_stack	*low_ind_a_node;
-
-// 	node_a = *a_stack;
-// 	node_b = *b_stack;
-// 	low_ind_a_node = *a_stack;
-// 	while (node_a)
-// 	{
-// 		if (node_a->index < low_ind_a_node->index)
-// 			low_ind_a_node = node_a;
-// 		node_a = node_a->next;
-// 	}
-// 	while (node_b)
-// 	{
-// 		if (node_b->index > max_a_ind)
-// 			node_b->target_pos = low_ind_a_node->pos;
-// 		node_b = node_b->next;
-// 	}
-// }
+int	get_lowind_pos(t_stack **stack)
+{
+	t_stack	*node;
+	t_stack	*lowind_node;
+	int		position;
+	
+	node = *stack;
+	lowind_node = *stack;
+	position = 0;
+	while (node)
+	{
+		if (node->index < lowind_node->index)
+			lowind_node = node;
+		node = node->next;
+	}
+	position = lowind_node->pos;
+	return (position);
+}
