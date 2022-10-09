@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/10 01:26:46 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/10 01:39:05 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int			get_lowind_pos(t_stack **stack);
 
 // Parse arguments //
 t_stack		*parse_args(char **argv);
+int			is_sorted(t_stack *a_stack);
 
 // Linked lists //
 int			ft_lst_len(t_stack **lst);
