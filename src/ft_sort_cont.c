@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/08 19:00:37 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/09 21:09:49 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,31 +120,23 @@ void	calc_cost(t_stack **a_stack, t_stack **b_stack)
 }
 
 // Need to improve
-void	find_tp_cont(t_stack **a_stack, t_stack **b_stack, int max_a_index)
+void	find_tp_cont(t_stack **a_stack, t_stack *node_b, int max_a_index)
 {
 	t_stack	*node_a;
-	t_stack	*node_b;
 	int		lowest_diff;
 	int		diff;
 
 	node_a = *a_stack;
-	node_b = *b_stack;
-	tp_high_index(a_stack, b_stack, max_a_index);
-	while (node_b)
+	lowest_diff = max_a_index - 1;
+	while (node_a)
 	{
-		lowest_diff = max_a_index - 1;
-		while (node_a)
+		diff = node_a->index - node_b->index;
+		if (diff > 0 && diff < lowest_diff)
 		{
-			diff = node_a->index - node_b->index;
-			if (diff > 0 && diff < lowest_diff)
-			{
-				lowest_diff = diff;
-				node_b->target_pos = node_a->pos;
-			}
-			node_a = node_a->next;
+			lowest_diff = diff;
+			node_b->target_pos = node_a->pos;
 		}
-		node_a = *a_stack;
-		node_b = node_b->next;
+		node_a = node_a->next;
 	}
 }
 
@@ -152,12 +144,29 @@ void	find_tp(t_stack **a_stack, t_stack **b_stack)
 {
 	t_stack	*node_a;
 	t_stack	*node_b;
+	t_stack	*low_ind_a_node;
 	int		max_a_index;
 	
 	node_a = *a_stack;
+	low_ind_a_node = *a_stack;
 	node_b = *b_stack;
 	max_a_index = get_maxind(a_stack);
-	find_tp_cont(a_stack, b_stack, max_a_index);
+	while (node_a)
+	{
+		if (node_a->index < low_ind_a_node->index)
+			low_ind_a_node = node_a;
+		node_a = node_a->next;
+	}
+	while (node_b)
+	{
+		if (node_b->index > max_a_index)
+			node_b->target_pos = low_ind_a_node->pos;
+		else
+		{
+			find_tp_cont(a_stack, node_b, max_a_index);
+		}
+		node_b = node_b->next;
+	}
 }
 
 void	add_pos(t_stack **a_stack, t_stack **b_stack)
