@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:45:12 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/10 01:32:20 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/10 04:10:13 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,25 @@ void	sort_three(t_stack **a_stack)
 
 void	pass_to_b(t_stack **a_stack, t_stack **b_stack)
 {
-	t_stack	*node;
-	int		elements;
+	int	a_size;
+	int	pushed;
 
-	node = *a_stack;
-	elements = ft_lst_len(a_stack);
-	while (elements > 0)
+	a_size = ft_lst_len(a_stack);
+	pushed = 0;
+	while (pushed < a_size / 2 && a_size - pushed > 3)
 	{
-		if (node->index < elements / 2)
+		if ((*a_stack)->index <= a_size / 2)
+		{
 			pb(a_stack, b_stack);
+			pushed++;
+		}
 		else
 			ra(a_stack, 0);
-		elements--;
 	}
-	elements = ft_lst_len(a_stack);
-	while (elements > 3)
+	while (a_size - pushed > 3)
 	{
 		pb(a_stack, b_stack);
-		elements--;
+		pushed++;
 	}
 }
 
