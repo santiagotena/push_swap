@@ -6,11 +6,40 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 23:25:09 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/03 00:23:26 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/10 02:52:32 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	add_index(t_stack *stack_a, int stack_size)
+{
+	t_stack	*node;
+	t_stack	*highest;
+	int		value;
+
+	while (--stack_size > 0)
+	{
+		node = stack_a;
+		value = -2147483648;
+		highest = NULL;
+		while (node)
+		{
+			if (node->value == -2147483648 && node->index == 0)
+				node->index = 1;
+			if (node->value > value && node->index == 0)
+			{
+				value = node->value;
+				highest = node;
+				node = stack_a;
+			}
+			else
+				node = node->next;
+		}
+		if (highest != NULL)
+			highest->index = stack_size;
+	}
+}
 
 int	is_sorted(t_stack *a_stack)
 {
@@ -47,35 +76,6 @@ int	check_dup(char **argv)
 		j = 1;
 	}
 	return (0);
-}
-
-void	add_index(t_stack *stack_a, int stack_size)
-{
-	t_stack	*node;
-	t_stack	*highest;
-	int		value;
-
-	while (--stack_size > 0)
-	{
-		node = stack_a;
-		value = -2147483648;
-		highest = NULL;
-		while (node)
-		{
-			if (node->value == -2147483648 && node->index == 0)
-				node->index = 1;
-			if (node->value > value && node->index == 0)
-			{
-				value = node->value;
-				highest = node;
-				node = stack_a;
-			}
-			else
-				node = node->next;
-		}
-		if (highest != NULL)
-			highest->index = stack_size;
-	}
 }
 
 t_stack	*parse_args(char **argv)
