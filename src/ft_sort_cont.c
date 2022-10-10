@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/10 02:23:29 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/10 02:40:57 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,20 +67,17 @@ void	exec_act(t_stack **a_stack, t_stack **b_stack)
 		}
 		node_b = node_b->next;
 	}
-	if (cost_a != 0 && cost_b != 0)
+	while (cost_a > 0 && cost_b > 0)
 	{
-		while (cost_a > 0 && cost_b > 0)
-		{
-			rr(a_stack, b_stack);
-			cost_a--;
-			cost_b--;
-		}
-		while (cost_a < 0 && cost_b < 0)
-		{
-			rrr(a_stack, b_stack);
-			cost_a++;
-			cost_b++;
-		}
+		rr(a_stack, b_stack);
+		cost_a--;
+		cost_b--;
+	}
+	while (cost_a < 0 && cost_b < 0)
+	{
+		rrr(a_stack, b_stack);
+		cost_a++;
+		cost_b++;
 	}
 	if (cost_a != 0)
 	{
@@ -146,7 +143,7 @@ void	find_tp(t_stack **a_stack, t_stack **b_stack)
 	node_b = *b_stack;
 	max_a_index = get_maxind(a_stack);
 	low_a_ind_pos = get_lowind_pos(a_stack);
-	lowest_diff = max_a_index;
+	lowest_diff = max_a_index - 1;
 	while (node_b)
 	{
 		if (node_b->index > max_a_index)
