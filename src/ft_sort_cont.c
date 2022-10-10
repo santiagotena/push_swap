@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:26:28 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/10 01:23:16 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/10 02:23:29 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	exec_act(t_stack **a_stack, t_stack **b_stack)
 		}
 		node_b = node_b->next;
 	}
-	if (cost_a != 0 || cost_b != 0)
+	if (cost_a != 0 && cost_b != 0)
 	{
 		while (cost_a > 0 && cost_b > 0)
 		{
