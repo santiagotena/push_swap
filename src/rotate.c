@@ -6,11 +6,11 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:30:34 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/08 15:25:24 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/11 22:33:44 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 /**
  * @brief Shift up all elements of stack a by 1.

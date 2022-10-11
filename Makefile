@@ -6,7 +6,7 @@
 #    By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 20:13:25 by stena-he          #+#    #+#              #
-#    Updated: 2022/10/11 22:16:41 by stena-he         ###   ########.fr        #
+#    Updated: 2022/10/11 22:32:40 by stena-he         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,10 +32,10 @@ SRC =	main.c \
 		ft_sort_utils.c \
 		linked_lists.c \
 		utils.c \
-		actions/push.c \
-		actions/swap.c \
-		actions/rotate.c \
-		actions/reverse_rotate.c
+		push.c \
+		swap.c \
+		rotate.c \
+		reverse_rotate.c
 
 # Add prefixes
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
