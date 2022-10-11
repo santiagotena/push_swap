@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:30:31 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/08 15:25:49 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/11 19:59:25 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	sb(t_stack **b_stack, int ss_call)
 {
 	t_stack	*node;
 	t_stack	*temp;
-	
+
 	if (!b_stack || !(*b_stack))
 		return ;
 	if ((*b_stack)->next == NULL)

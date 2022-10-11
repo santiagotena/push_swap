@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 01:00:34 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/07 12:28:09 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/11 19:58:39 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,21 @@ int	abs_val(int nb)
 	if (nb < 0)
 		return (nb * -1);
 	return (nb);
+}
+
+void	free_stack(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	if (!stack || !(*stack))
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
+	*stack = NULL;
 }
 
 /**
