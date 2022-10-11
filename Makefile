@@ -6,7 +6,7 @@
 #    By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 20:13:25 by stena-he          #+#    #+#              #
-#    Updated: 2022/10/11 20:02:22 by stena-he         ###   ########.fr        #
+#    Updated: 2022/10/11 22:16:41 by stena-he         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,45 +16,51 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
 DEBUG = -fsanitize=address
 
-# Removal
-RM = rm -f
-
 # Libraries
 LIBFT = libraries/ft_printf/libft/libft.a
 PRINTF = libraries/ft_printf/libftprintf.a
 
+# Paths
+SRC_PATH = src/
+OBJ_PATH = obj/
+
 # Source and object files
-SRC =	src/main.c \
-		src/parse_args.c \
-		src/ft_sort.c \
-		src/ft_sort_cont.c \
-		src/ft_sort_utils.c \
-		src/linked_lists.c \
-		src/utils.c \
-		src/actions/push.c \
-		src/actions/swap.c \
-		src/actions/rotate.c \
-		src/actions/reverse_rotate.c
-			
-OBJ = $(SRC:%.c=%.o)
+SRC =	main.c \
+		parse_args.c \
+		ft_sort.c \
+		ft_sort_cont.c \
+		ft_sort_utils.c \
+		linked_lists.c \
+		utils.c \
+		actions/push.c \
+		actions/swap.c \
+		actions/rotate.c \
+		actions/reverse_rotate.c
+
+# Add prefixes
+SRCS	= $(addprefix $(SRC_PATH), $(SRC))
+OBJ		= $(SRCS:.c=.o)
+OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))			
 
 # Rules
-all: $(NAME)
+all: $(OBJ_PATH) $(NAME)
+
+$(OBJ_PATH):
+	mkdir $(OBJ_PATH)
 
 $(NAME): $(OBJ)
 	$(MAKE) -C libraries/ft_printf
+	mv libraries/ft_printf/*.o obj/
 	$(MAKE) -C libraries/ft_printf/libft
-	$(CC) $(CFLAGS) $(OBJ) $(MLX) $(LIBFT) $(PRINTF) -o $(NAME)
+	mv libraries/ft_printf/libft/*.o obj/
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(PRINTF) -o $(NAME)
+	mv src/*.o obj/
 
 clean:
-	$(MAKE) clean -C libraries/ft_printf
-	$(MAKE) clean -C libraries/ft_printf/libft
-	$(RM) $(OBJ) $(OBJ_BONUS)
+	rm -rf $(OBJ_PATH)
 
 fclean: clean
-	$(MAKE) fclean -C libraries/ft_printf
-	$(MAKE) fclean -C libraries/ft_printf/libft
-	$(RM) $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
