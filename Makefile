@@ -6,7 +6,7 @@
 #    By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 20:13:25 by stena-he          #+#    #+#              #
-#    Updated: 2022/10/11 22:32:40 by stena-he         ###   ########.fr        #
+#    Updated: 2022/10/11 22:49:01 by stena-he         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,8 @@ SRC =	main.c \
 		parse_args.c \
 		ft_sort.c \
 		ft_sort_cont.c \
+		exec_actions.c \
+		final_sort.c \
 		ft_sort_utils.c \
 		linked_lists.c \
 		utils.c \
