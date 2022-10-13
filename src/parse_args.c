@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 23:25:09 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/13 16:38:32 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/13 17:32:59 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,11 @@ t_stack	*parse_args(char **argv, int is_string)
 	int			new;
 
 	index = 1;
+	if(!argv)
+		exit(0);
+	//free here ->
+	if(!(*argv))
+		exit(0);
 	if (is_string)
 		index = 0;
 	new = ft_atoi_mod(argv[index++]);
