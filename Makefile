@@ -6,7 +6,7 @@
 #    By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 20:13:25 by stena-he          #+#    #+#              #
-#    Updated: 2022/10/13 03:47:07 by stena-he         ###   ########.fr        #
+#    Updated: 2022/10/13 15:00:25 by stena-he         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,11 +45,6 @@ SRC =	main.c \
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRCS:.c=.o)
 
-# Objects
-PRINTF_OBJ = libraries/ft_printf/*.o
-LIBFT_OBJ = libraries/ft_printf/libft/*.o
-SRC_OBJ = src/*.o
-
 # Rules
 all: $(OBJ_PATH) $(NAME)
 
@@ -57,19 +52,21 @@ $(OBJ_PATH):
 	mkdir $(OBJ_PATH)
 
 $(NAME): $(OBJ)
+	$(MAKE) bonus -C $(LIBFT_PATH)
 	$(MAKE) -C $(PRINTF_PATH)
-	mv $(PRINTF_OBJ) $(OBJ_PATH)
-	$(MAKE) -C $(LIBFT_PATH)
-	mv $(LIBFT_OBJ) $(OBJ_PATH)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(PRINTF) -o $(NAME)
-	mv $(SRC_OBJ) $(OBJ_PATH)
+	$(CC) $(CFLAGS) $(OBJ) $(MLX) $(LIBFT) $(PRINTF) -o $(NAME)
+	mv $(OBJ) $(OBJ_PATH)
 
 clean:
 	rm -rf $(OBJ_PATH)
+	$(MAKE) clean -C $(LIBFT_PATH)
+	$(MAKE) clean -C $(PRINTF_PATH)
 
 fclean: clean
 	rm -f $(NAME)
-
+	$(MAKE) fclean -C $(LIBFT_PATH)
+	$(MAKE) fclean -C $(PRINTF_PATH)
+	
 re: fclean all
 
 .PHONY: all clean fclean re
