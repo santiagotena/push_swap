@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 23:25:09 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/13 17:32:59 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/13 19:21:15 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,17 @@ int	check_dup(char **argv)
 	return (0);
 }
 
+void	parse_args_cont(char **argv, t_stack *a_stack, int is_string, int index)
+{
+	if (check_dup(argv))
+		error_exit();
+	if (is_sorted(a_stack))
+		exit(0);
+	if (is_string)
+		index++;
+	add_index(a_stack, index);
+}
+
 t_stack	*parse_args(char **argv, int is_string)
 {
 	t_stack		*a_stack;
@@ -86,10 +97,7 @@ t_stack	*parse_args(char **argv, int is_string)
 	int			new;
 
 	index = 1;
-	if(!argv)
-		exit(0);
-	//free here ->
-	if(!(*argv))
+	if (!argv || !(*argv))
 		exit(0);
 	if (is_string)
 		index = 0;
@@ -102,12 +110,6 @@ t_stack	*parse_args(char **argv, int is_string)
 		ft_lstadd_back_mod(&a_stack, node);
 		index++;
 	}
-	if (check_dup(argv))
-		error_exit();
-	if (is_sorted(a_stack))
-		exit(0);
-	if (is_string)
-		index++;
-	add_index(a_stack, index);
+	parse_args_cont(argv, a_stack, is_string, index);
 	return (a_stack);
 }
