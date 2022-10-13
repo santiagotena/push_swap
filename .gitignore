@@ -2,5 +2,8 @@
 *.o
 *.a
 a.out
+
 push_swap
+obj/
 checker_Mac
+push_swap_tester
