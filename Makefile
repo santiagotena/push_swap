@@ -6,7 +6,7 @@
 #    By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 20:13:25 by stena-he          #+#    #+#              #
-#    Updated: 2022/10/11 22:49:01 by stena-he         ###   ########.fr        #
+#    Updated: 2022/10/13 03:47:07 by stena-he         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ PRINTF = libraries/ft_printf/libftprintf.a
 # Paths
 SRC_PATH = src/
 OBJ_PATH = obj/
+LIBFT_PATH = libraries/ft_printf/libft
+PRINTF_PATH = libraries/ft_printf
 
 # Source and object files
 SRC =	main.c \
@@ -42,7 +44,11 @@ SRC =	main.c \
 # Add prefixes
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRCS:.c=.o)
-OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))			
+
+# Objects
+PRINTF_OBJ = libraries/ft_printf/*.o
+LIBFT_OBJ = libraries/ft_printf/libft/*.o
+SRC_OBJ = src/*.o
 
 # Rules
 all: $(OBJ_PATH) $(NAME)
@@ -51,12 +57,12 @@ $(OBJ_PATH):
 	mkdir $(OBJ_PATH)
 
 $(NAME): $(OBJ)
-	$(MAKE) -C libraries/ft_printf
-	mv libraries/ft_printf/*.o obj/
-	$(MAKE) -C libraries/ft_printf/libft
-	mv libraries/ft_printf/libft/*.o obj/
+	$(MAKE) -C $(PRINTF_PATH)
+	mv $(PRINTF_OBJ) $(OBJ_PATH)
+	$(MAKE) -C $(LIBFT_PATH)
+	mv $(LIBFT_OBJ) $(OBJ_PATH)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(PRINTF) -o $(NAME)
-	mv src/*.o obj/
+	mv $(SRC_OBJ) $(OBJ_PATH)
 
 clean:
 	rm -rf $(OBJ_PATH)
