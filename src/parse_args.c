@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 23:25:09 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/13 19:52:08 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/13 20:35:52 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,13 @@ void	add_index(t_stack *stack_a, int stack_size)
 	}
 }
 
-int	is_sorted(t_stack *a_stack)
+void	reduce_i_j(int *i, int *j)
 {
-	while (a_stack->next != NULL)
-	{
-		if (a_stack->value > a_stack->next->value)
-			return (0);
-		a_stack = a_stack->next;
-	}
-	return (1);
+	*i = 0;
+	*j = 0;
 }
 
-int	check_dup(char **argv)
+int	check_dup(char **argv, int is_string)
 {
 	int		i;
 	int		j;
@@ -60,6 +55,8 @@ int	check_dup(char **argv)
 
 	i = 1;
 	j = 1;
+	if (is_string)
+		reduce_i_j(&i, &j);
 	counter = 0;
 	while (argv[i])
 	{
@@ -80,7 +77,7 @@ int	check_dup(char **argv)
 
 void	parse_args_cont(char **argv, t_stack *a_stack, int is_string, int index)
 {
-	if (check_dup(argv))
+	if (check_dup(argv, is_string))
 		error_exit();
 	if (is_sorted(a_stack))
 		exit(0);
