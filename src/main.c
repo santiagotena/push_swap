@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:12:33 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/13 19:14:37 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/13 19:51:54 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ int	main(int argc, char **argv)
 	}
 	a_stack = parse_args(argv, is_string);
 	ft_sort(&a_stack, &b_stack);
-	if (is_string)
-		free(&argv);
 	free_stack(&a_stack);
 	free_stack(&b_stack);
 	return (0);
