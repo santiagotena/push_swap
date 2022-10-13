@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:13:41 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/12 02:33:38 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/13 15:52:12 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_stack
 
 /* Functions */
 // Parse arguments //
-t_stack		*parse_args(char **argv);
+t_stack		*parse_args(char **argv, int is_string);
 int			is_sorted(t_stack *a_stack);
 // Sort //
 void		ft_sort(t_stack **a_stack, t_stack **b_stack);
