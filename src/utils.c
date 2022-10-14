@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 01:00:34 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/13 20:36:01 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/14 01:56:50 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,40 +38,6 @@ void	free_stack(t_stack **stack)
 		*stack = tmp;
 	}
 	*stack = NULL;
-}
-
-/**
- * @brief Converts the initial portion of the string pointed to by str to 
- * int representation.
- * 
- * @param str 
- * @return int 
- */
-int	ft_atoi_mod(const char *str)
-{
-	long int			output;
-	long int			sign;
-
-	output = 0;
-	sign = 1;
-	if (*str == '-')
-	{
-		str++;
-		sign = -1;
-	}
-	if (*str == '+')
-		str++;
-	while (*str)
-	{
-		if (!ft_isdigit(*str))
-			error_exit();
-		output = output * 10 + (*str - '0');
-		str++;
-	}
-	output = sign * output;
-	if (output < -2147483648 || output > 2147483647)
-		error_exit();
-	return ((int)(output));
 }
 
 int	is_sorted(t_stack *a_stack)
