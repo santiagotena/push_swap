@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 01:00:34 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/14 01:56:50 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/14 17:20:20 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,17 @@ int	is_sorted(t_stack *a_stack)
 		a_stack = a_stack->next;
 	}
 	return (1);
+}
+
+void	free_str_arr(char **argv)
+{
+	char	**temp;
+
+	temp = argv;
+	while (*argv)
+	{
+		free(*argv);
+		argv++;
+	}
+	free (temp);
 }

@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 23:25:09 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/13 20:35:52 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/14 17:20:16 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,6 @@ t_stack	*parse_args(char **argv, int is_string)
 	}
 	parse_args_cont(argv, a_stack, is_string, index);
 	if (is_string)
-		free(argv);
+		free_str_arr(argv);
 	return (a_stack);
 }
