@@ -6,7 +6,7 @@
 #    By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 20:13:25 by stena-he          #+#    #+#              #
-#    Updated: 2022/10/13 15:00:25 by stena-he         ###   ########.fr        #
+#    Updated: 2022/10/14 01:59:00 by stena-he         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ PRINTF_PATH = libraries/ft_printf
 # Source and object files
 SRC =	main.c \
 		parse_args.c \
+		ft_atoi_mod.c \
 		ft_sort.c \
 		ft_sort_cont.c \
 		exec_actions.c \
