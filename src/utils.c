@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 01:00:34 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/15 21:14:19 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/16 16:29:06 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error_exit(void)
 {
-	write(2, "Error\n", 7);
+	ft_putstr_fd("Error\n", 2);
 	exit (0);
 }
 
