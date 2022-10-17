@@ -6,17 +6,17 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 01:57:06 by stena-he          #+#    #+#             */
-/*   Updated: 2022/10/14 01:58:41 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/10/17 19:55:32 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	exit_atoi(int output, int i)
+void	exit_atoi(long int output, int i)
 {
 	if (output < -2147483648 || output > 2147483647)
 		error_exit();
-	if ((i > 11 && output < -2147483648) || (i > 10 && output < 2147483647))
+	if ((i > 10 && output < -2147483648) || (i > 9 && output > 2147483647))
 		error_exit();
 }
 
