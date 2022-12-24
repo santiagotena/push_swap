@@ -6,7 +6,7 @@
 /*   By: stena-he <stena-he@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:12:33 by stena-he          #+#    #+#             */
-/*   Updated: 2022/11/10 10:56:42 by stena-he         ###   ########.fr       */
+/*   Updated: 2022/12/24 05:02:23 by stena-he         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(int argc, char **argv)
 	
 	ft_sort(&a_stack, &b_stack);
 
-	printf("End\n");
+	printf("\nEnd\n");
 	print_stacks(&a_stack, &b_stack);
 	
 	free_stack(&a_stack);
