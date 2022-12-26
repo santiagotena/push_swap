@@ -4,9 +4,9 @@
 <img src="https://github.com/santiagotena/assets/blob/master/logos/42%20logo.jpeg?raw=true" alt="42 Wolfsburg Logo" width="150" height="150">
 </p>
  
-Push_swap is a 42 Wolfsburg sorting algorithm project. Given a set of integer values that are given as input and having two stacks at our disposal. We are to produce the smallest set of instructions we can that will manipulate both stacks and end up ordering the numbers in ascending value in one of the stacks.
+Push_swap is a 42 Wolfsburg number sorting algorithm project. Given a set of integer values that are given as input and having two stacks at our disposal. We are to produce the smallest set of instructions we can that will manipulate both stacks and end up ordering the numbers in ascending value in one of the stacks.
  
-A core concept for this kind of algorithm is that of algorithm complexity. Different algorithms perform at differing efficiencies in terms of actions.
+A core concept for this kind of project is that of algorithm complexity. Different algorithms perform at differing efficiencies in terms of actions and time.
  
 ## Rules
  
